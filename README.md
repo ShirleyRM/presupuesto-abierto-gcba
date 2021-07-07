@@ -1,18 +1,53 @@
-# gcba-presupuesto
+*Esta herramienta digital forma parte del catálogo de herramientas del **Banco Interamericano de Desarrollo**. Puedes conocer más sobre la iniciativa del BID en [code.iadb.org](https://code.iadb.org)*
+<br>
+<br>
+<p align="center">
+<img  height="80"  src="https://www.buenosaires.gob.ar/sites/gcaba/themes/gcbaV4/xgcaba/css/BA2016.png">
+</p>
+
+* [Introducción](#introducción)
+* [Requerimientos](#requerimientos)
+* [Compilación](#compilación)
+* [Generación de datos](#generación-de-datos)
+  * [IMPORTAR EL CSV GENERADO DEL TRIMESTRE DESDE CONSOLA MYSQL](#importar-el-csv-generado-del-trimestre-desde-consola-mysql)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Introducción
+***
 
 `gcba-presupuesto` es un sitio estático: las visualizaciones se
 construyen a partir de los datos almacenados en los archivos `CSV` que
 están en el directorio `Data`.
 
 ## Requerimientos
+***
 
-Se requieren las herramientas `bower` y `grunt`. Instalarlas con NPM.
+Se requieren las herramientas [bower](https://github.com/bower/bower) y [Grunt](https://gruntjs.com). Instalarlas con NPM.
+```sh
+npm install -g grunt-cli
+```
 
 Instalar las dependencias con: `bower install`. Una vez instaladas, el
 sitio puede ser servido desde la carpeta donde está el archivo
 `index.html` (por ejemplo, con `python -m SimpleHTTPServer`).
+```sh
+# install dependencies listed in bower.json
+$ bower install
+
+# install a package and add it to bower.json
+$ bower install <package> --save
+
+# install specific version of a package and add it to bower.json
+$ bower install <package>#<version> --save
+```
 
 ## Compilación
+***
 
 Para *deployments* públicos, se recomienda procesar los archivos con
 las tareas definidas en `gruntfile.js`. 
@@ -38,6 +73,7 @@ apta para ser copiada a un servidor HTTP.
 GZIP para archivos de tipo CSV (MIME type: `text/csv`)
 
 ## Generación de datos
+***
 
 Los datos se generan a partir de los
 [datos de ejecución presupuestaria](http://data.buenosaires.gob.ar/dataset/presupuesto-ejecutado)
